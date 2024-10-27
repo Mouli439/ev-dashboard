@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>EV Dashboard</h1>
+        <div id="filterContainer">
+            <label for="dataFilter">Select Data:</label>
+            <select id="stateFilter" class="form-control">
+                <option value="all">All Brands</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Ford">Ford</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Honda">Honda</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <div class="content">
+            <div class="charts row">
+                <div class="col-lg-6 col-sm-12 chart-container">
+                    <div class="card">
+                        <h2 class="card-header">Sales Chart</h2>
+                        <div class="card-body">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 chart-container">
+                    <div class="card">
+                        <h2 class="card-header">Engagement Chart</h2>
+                        <div class="card-body">
+                            <canvas id="engagementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <h2 class="card-header">Filtered Data</h2>
+                <div class="card-body">
+                 
+                    <div id="tableContainer">
+                        <table id="dataTable" class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>VIN</th>
+                                    <th>County</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Model Year</th>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Electric Range</th>
+                                    <th>Base MSRP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
